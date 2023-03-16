@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block body %}
-    <div class="home-view">
-        <h3>Home</h3>
-        <form id="new-status-form">
-            <div class="form-group">
-                <textarea id="status-body" class="form-control"></textarea>
-                <button type="submit" id="submit" class="btn btn-primary">Post</button>
-            </div>
-        </form>
-        <div id="status-view">
-            <div class="list-group"></div>
+<h3>Home</h3>
+<div class="home-view">
+    <form id="new-status-form">
+        <div class="form-group">
+            <textarea id="status-body" class="form-control"></textarea>
+            <button type="submit" id="submit" class="btn btn-primary">Post</button>
         </div>
-    </div>
+    </form>
+</div>
+<div id="status-view">
+    <div class="list-group"></div>
+</div>
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'network/home.js' %}"></script>
+<script src="{% static 'network/home.js' %}"></script>
 {% endblock %}

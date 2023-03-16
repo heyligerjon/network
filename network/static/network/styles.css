@@ -1,0 +1,20 @@
+body {
+  font-family: "Degular", Tahoma, Geneva, Verdana, sans-serif;
+}
+body .body {
+  margin: 0 3rem;
+}
+body .body .home-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav .nav {
+  width: 100%;
+}
+#new-status-form {
+  width: 50%;
+}
+
+/*# sourceMappingURL=styles.css.map */
