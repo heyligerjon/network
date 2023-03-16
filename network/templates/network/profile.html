@@ -19,9 +19,15 @@
             <div class="list-group">
             {% for status in statuses %}
                 <a href="{% url 'status_view' status.id %}" id="status-{{ status.id }}" class="list-group-item list-group-item-action">
-                    <span>{{ status.user }}</span>
-                    <span>{{ status.body }}</span>
-                    <span>{{ status.timestamp }}</span>
+                    <p class="mb-1">{{status.body}}</p>
+                    <div class="d-lg-flex w-100 justify-content-lg-between" style="padding-top: .5rem;">
+                        <div id="status-options" class="d-flex w-25 justify-content-start">
+                            <button type="button" id="status-like" class="btn btn-primary">Like</button>
+                            <p class="mb-1" id="status-reacts">**{{ status.id }}</p>
+                            <button type="button" id="status-edit" class="btn btn-primary">Edit</button>
+                        </div>
+                        <small>{{ status.timestamp }}</small>
+                    </div>
                 </a>
             {% endfor %}
             </div>
