@@ -21,6 +21,7 @@ class User(AbstractUser):
         return {
             "id": self.id,
             "username": self.username,
+            "profile_img": str(self.profilePicture),
             "email": self.email,
             "first_name": self.first_name,
             "last_name": self.last_name,
@@ -38,6 +39,8 @@ class Status(models.Model):
     def serialize(self):
         return {
             "id": self.id,
+            "profile_img": str(self.user.profilePicture),
+            "name": self.user.first_name + " " + self.user.last_name,
             "username": self.user.username,
             "body": self.body,
             "timestamp": self.timestamp.strftime("%b %d %Y, %I:%M %p")
