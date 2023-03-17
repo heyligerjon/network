@@ -46,6 +46,7 @@ function open_edit() {
         else
             display[i] = 'none'
     }
+
     document.querySelector('#status-form').style.display = display[0]
     document.querySelector('#status-body').style.display = display[1]
 }

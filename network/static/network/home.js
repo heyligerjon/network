@@ -12,7 +12,7 @@ function add_status(e) {
     e.preventDefault();
 
     // Parse the status form for content
-    body = document.querySelector('#status-body').value
+    body = document.querySelector('#new-status-body').value
     fetch('/status/new', {
         method: 'POST',
         body: JSON.stringify({
@@ -35,7 +35,7 @@ function format_date() {
 }
 
 function load_statuses() {
-    document.querySelector('#status-body').value = '';
+    document.querySelector('#new-status-body').value = '';
     currentUser = document.querySelector('#profile-link').innerHTML;
 
     fetch('/home')
@@ -59,9 +59,9 @@ function load_statuses() {
                 <h5>@${element.username}</h6>
                 <p class="mb-1">${element.body}</p>
                 <div id="status-options" class="d-flex w-25 justify-content-start">
-                    <button type="button" id="status-like" class="btn btn-primary">Like</button>
+                    <input type="button" id="status-like" class="btn btn-primary" value="Like"></input>
                     <p class="mb-1" id="status-reacts">${element.id}</p>
-                    <button type="button" id="status-edit" class="btn btn-primary">Edit</button>
+                    <input type="button" id="status-edit" class="btn btn-primary" value="Edit"></input>
                 </div>
             `
             }
@@ -75,7 +75,7 @@ function load_statuses() {
                 <h6>@${element.username}</h6>
                 <p class="mb-1">${element.body}</p>
                 <div id="status-options" class="d-flex w-25 justify-content-start">
-                    <button type="button" id="status-like" class="btn btn-primary">Like</button>
+                    <input type="button" id="status-like" class="btn btn-primary">Like</input>
                     <p class="mb-1" id="status-reacts">${element.id}</p>
                 </div>
             `

@@ -2,40 +2,43 @@
 {% load static %}
 
 {% block body %}
-    <div id="status-view">
-        <div id="status-card" class="card" style="width: 50%;">
+    <div id="status-view" class="container">
+        <div id="status-card" class="card mx-auto" style="width: 50%;">
             <div class="card=body">
                 <span hidden id="status-id">{{ status.id }}</span>
                 <span hidden id="status-user">{{ status.user.username }}</span>
-                <h4 class="card-title">{{ status.user }}</h5>  
+                <div id="status-header" class="d-flex-lg w-100">
+                    <img src="../{{user.profilePicture}}" style="max-width: 75px; border-radius: 100%; margin: 0 1rem 0 0;">
+                    <h4 style="width: fit-content;">{{ status.user }}</h4> 
+                </div> 
                 <p id="status-body" class="card-text">{{ status.body }}</p>
                 <form id="status-form">
                     {% csrf_token %}
-                    <input id="status-editor">
-                    <button type="submit" id="status-update" class="btn btn-primary">Send</button>
+                    <input id="status-editor" type="text" class="form-control">
+                    <input type="submit" id="status-update" class="btn btn-primary" value="Send"></input>
                 </form>
             </div>
             <hr>
             <div id="status-options" class="card-body">
-                <button type="button" id="status-reply" class="btn btn-primary">Reply</button>
-                <button type="button" id="status-like" class="btn btn-primary">Like</button>
+                <input type="button" id="status-reply" class="btn btn-primary" value="Reply"></input>
+                <input type="button" id="status-like" class="btn btn-primary" value="Like"></input>
                 <span id="status-reacts">{{ reactions }}</span>
                 {% if status.user == user %}
-                    <button type="button" id="status-edit" class="btn btn-primary">Edit</button>
+                    <input type="button" id="status-edit" class="btn btn-primary" value="Edit"></input>
                 {% endif %}
             </div>
             <div id="comment-box" class="card-body">
                 <form id="comment-form">
                     <textarea id="comment-body"></textarea>
-                    <button type="submit" id="comment-send" class="btn btn-secondary">Send</button>
+                    <input type="submit" id="comment-send" class="btn btn-secondary">Send</input>
                 </form>
             </div>
             <div id="comment-list" class="list-group">
                 <h5>Comments</h5>
             {% for comment in comments %}
-                <hr>
                 <h6 class="card-title">{{ comment.user.username }}</h6>
-                <p class="card-text">${{ comment.body }}</span>
+                <p class="card-text">{{ comment.body }}</span>
+                <hr>
             {% endfor %}
             </div>
         </div>

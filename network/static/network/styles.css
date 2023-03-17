@@ -18,6 +18,13 @@ h2, h3 {
 nav .nav {
   width: 100%;
 }
+.user-form {
+  width: 50%;
+}
+.user-form .btn {
+  margin-bottom: 1rem;
+}
+
 #new-status-form {
   width: 100%;
 }
@@ -32,7 +39,7 @@ form .form-control {
 #status-view .list-group h5 {
   margin-top: 0.5rem;
 }
-#status-view .list-group button {
+#status-view .list-group input {
   height: fit-content;
   padding: 0.1 0.5rem;
   margin-right: 0.5rem;
@@ -43,6 +50,50 @@ form .form-control {
 #status-view .list-group #status-options p {
   padding: 0.5rem 1rem 0.5rem 0;
   margin: 0 0.5rem;
+}
+
+#profile-pic {
+  margin-top: 3rem;
+}
+
+#profile-edit-form {
+  width: 50%;
+}
+
+#status-body, #status-editor {
+  margin-left: 2rem;
+}
+
+#status-header {
+  margin: 1rem;
+}
+#status-header h4 {
+  padding-top: 0.5rem;
+}
+
+#comment-list {
+  padding: 0 1rem;
+}
+#comment-list h5 {
+  padding: 1rem 0 0.5rem;
+}
+
+#status-options input {
+  height: fit-content;
+  padding: 0.1 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#status-editor {
+  border: 0px;
+  padding: 0rem;
+  width: 75%;
+}
+
+#status-update {
+  height: fit-content;
+  padding: 0.1 0.5rem;
+  margin: 1rem 0.5rem 0 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
